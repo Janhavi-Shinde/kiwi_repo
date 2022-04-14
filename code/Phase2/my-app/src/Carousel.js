@@ -2,14 +2,16 @@ import { React, useState } from 'react';
 import Button from "./Button";
 import Box from "./Box";
 
-function Carousel() {
-    const imgArr = ["http://hp-api.herokuapp.com/images/harry.jpg", "http://hp-api.herokuapp.com/images/hermione.jpeg",
-        "http://hp-api.herokuapp.com/images/ron.jpg", "http://hp-api.herokuapp.com/images/draco.jpg"];
+function Carousel({apiData}) {
+
+    const images = apiData.map(element => element.image);
+    const imgArr = images;
 
     const [index, setIndex] = useState(0);
 
-    const lastIndex = imgArr.length -1 ;
-    console.log(lastIndex);
+    // const lastIndex = imgArr.length -1 ; 
+    const lastIndex = 10
+    
 
     function changeIndex() {
         console.log('starting index:', index);
