@@ -1,6 +1,7 @@
 import { React, useState, useEffect } from "react";
 import Carousel from "./Carousel";
 import './App.css';
+import Quiz from "./Quiz";
 
 function App() {
   const [ apiData, setApidata] = useState(null);
@@ -11,15 +12,13 @@ function App() {
       .then(r=>r.json())
       .then(data=> setApidata(data));
           },[]
-
   )
 
   return (
     <div className="App">
       <p> Click the 'Next' button to explore the main Hogwarts students! </p>
        {apiData && <Carousel apiData={apiData}/>}
-       
-
+       <Quiz/>  
     </div>
   );
 }
