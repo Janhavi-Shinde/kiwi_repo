@@ -32,27 +32,6 @@
       ],
       "correctIndex": 2,
       "id": 3
-    },
-    {
-      "options": [
-        "Gryffindor",
-        "Ravenclaw",
-        "Hufflepuff",
-        "Slytherin"
-      ],
-      "correctIndex": 0,
-      "id": 4
-    },
-    {
-      "question": "What house does Draco Malfoy belong to?",
-      "options": [
-        "Gryffindor",
-        "Ravenclaw",
-        "Hufflepuff",
-        "Slytherin"
-      ],
-      "correctIndex": 3,
-      "id": 5
     }
   ]
 }

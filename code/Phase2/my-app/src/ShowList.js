@@ -1,12 +1,13 @@
 import React from 'react';
+import ListDeleteButton from './ListDeleteButton';
 
 
 function ShowList({ questions }) {
 
     const card = questions && questions.map(q => (
-        <div className="QCard" >
-            <h3>Question: {q.question}
-                <button>Delete Question</button></h3>
+        <li key={q.id} >
+            <h3>Question No.{q.id}: {q.question}
+                <ListDeleteButton id={q.id}/></h3>
 
             <label htmlFor="selectAnswers">
                 Pick your answer:
@@ -18,12 +19,15 @@ function ShowList({ questions }) {
                     </option>
                 ))}
             </select>
-        </div>
+        </li>
     ))
     return (
         <>
             <h2>List of Questions</h2>
+            <ul className="QCard">
             {card}
+            </ul>
+            
         </>
 
 
