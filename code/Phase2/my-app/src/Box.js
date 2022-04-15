@@ -1,10 +1,10 @@
 import React from 'react';
-function Box ({updatedArray}) {
+function Box({ updatedArray }) {
 
 
     return (
         <div className="Box">
-            <img src={updatedArray.image} alt='character'/>
+            <img src={updatedArray.image} alt='character' />
         </div>
     )
 }

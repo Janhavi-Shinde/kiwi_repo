@@ -1,4 +1,4 @@
-import { React, useState} from 'react';
+import { React, useState } from 'react';
 
 
 function AddNew() {
@@ -51,7 +51,7 @@ function AddNew() {
                         onChange={handleChange}
                     />
                 </label>
-                <br/>
+                <br />
                 <label>
                     Answer 1:
                     <input
@@ -61,7 +61,7 @@ function AddNew() {
                         onChange={handleChange}
                     />
                 </label>
-                <br/>
+                <br />
                 <label>
                     Answer 2:
                     <input
@@ -71,7 +71,7 @@ function AddNew() {
                         onChange={handleChange}
                     />
                 </label>
-                <br/>
+                <br />
                 <label>
                     Answer 3:
                     <input
@@ -81,7 +81,7 @@ function AddNew() {
                         onChange={handleChange}
                     />
                 </label>
-                <br/>
+                <br />
                 <label>
                     Answer 4:
                     <input
@@ -91,7 +91,7 @@ function AddNew() {
                         onChange={handleChange}
                     />
                 </label>
-                <br/>
+                <br />
                 <label>
                     Correct Answer:
                     <select
@@ -105,7 +105,7 @@ function AddNew() {
                         <option value="3">{formData.answer4}</option>
                     </select>
                 </label>
-                <br/>
+                <br />
                 <button type="submit">Add Question</button>
             </form>
         </section>

@@ -1,4 +1,4 @@
-import { React, useState,useEffect } from 'react';
+import { React, useState, useEffect } from 'react';
 import Button from "./Button";
 import Box from "./Box";
 import AddQuestionButton from './AddQuestionButton';
@@ -15,20 +15,12 @@ function Carousel({ apiData }) {
     const object = apiData.map(elem => ({ image: elem.image, name: elem.name, house: elem.house }));
     const validObject = JSON.stringify(object);
     const validObjectTwo = JSON.parse(validObject);
-    console.log('parsed: ', validObjectTwo);
+    // console.log('parsed: ', validObjectTwo);
     // console.log('stringified: ', validObject);
-    console.log(typeof validObjectTwo); //=> object
+    // console.log(typeof validObjectTwo); //=> object
     const tenArray = validObjectTwo.filter(elem => elem.image ? elem : null);
-    console.log(tenArray);
+    // console.log(tenArray);
 
-    // const slicedArray = validObject.slice(1,12);
-    // console.log(slicedArray);
-
-    // console.log(validObject.slice(1,12));
-    // const validTenObjects = validObject.slice(11);
-
-
-    console.log(tenArray[2].image);
 
     function changeIndex() {
         console.log('starting index:', index);
@@ -45,11 +37,11 @@ function Carousel({ apiData }) {
     console.log('updated imgArr index to :', index);
 
     function handleOnClick(event) {
-        event.preventDefault(); 
-        const houseArray = [ "Gryffindor", "Ravenclaw", "Hufflepuff", "Slytherin",];
+        event.preventDefault();
+        const houseArray = ["Gryffindor", "Ravenclaw", "Hufflepuff", "Slytherin",];
         const calcIndex = houseArray.indexOf(updatedArray.house);
         console.log("house:", updatedArray.house, "correctIndex:", calcIndex);
-            fetch('http://localhost:4000/questions', {
+        fetch('http://localhost:4000/questions', {
             method: 'POST',
             headers: { 'Content-Type': "application/json" },
             body: JSON.stringify({
@@ -63,7 +55,7 @@ function Carousel({ apiData }) {
                 correctIndex: parseInt(calcIndex),
             })
         }).then(() => { console.log('new formData added') })
-        
+
     }
 
     return (
