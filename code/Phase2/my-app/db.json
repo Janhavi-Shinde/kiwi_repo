@@ -1,0 +1,58 @@
+{
+  "questions": [
+    {
+      "id": 1,
+      "question": "When was the first Harry Potter book released?",
+      "options": [
+        "1990",
+        "2014",
+        "1997",
+        "2000"
+      ],
+      "correctIndex": 2
+    },
+    {
+      "id": 2,
+      "question": "Who wrote Harry Potter?",
+      "options": [
+        "J.K Rowling",
+        "David Yates",
+        "Belinda Murrell",
+        "Rick Riordan"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "question": "Best HP Book?",
+      "options": [
+        "PoA",
+        "HBP",
+        "GoF",
+        "PS"
+      ],
+      "correctIndex": 2,
+      "id": 3
+    },
+    {
+      "options": [
+        "Gryffindor",
+        "Ravenclaw",
+        "Hufflepuff",
+        "Slytherin"
+      ],
+      "correctIndex": 0,
+      "id": 4
+    },
+    {
+      "question": "What house does Draco Malfoy belong to?",
+      "options": [
+        "Gryffindor",
+        "Ravenclaw",
+        "Hufflepuff",
+        "Slytherin"
+      ],
+      "correctIndex": 3,
+      "id": 5
+    }
+  ]
+}

@@ -1,6 +1,7 @@
-import { React, useState } from 'react';
+import { React, useState,useEffect } from 'react';
 import Button from "./Button";
 import Box from "./Box";
+import AddQuestionButton from './AddQuestionButton';
 
 function Carousel({ apiData }) {
 
@@ -27,7 +28,7 @@ function Carousel({ apiData }) {
     // const validTenObjects = validObject.slice(11);
 
 
-console.log(tenArray[2].image);
+    console.log(tenArray[2].image);
 
     function changeIndex() {
         console.log('starting index:', index);
@@ -43,12 +44,33 @@ console.log(tenArray[2].image);
     let updatedArray = tenArray[index];
     console.log('updated imgArr index to :', index);
 
-
+    function handleOnClick(event) {
+        event.preventDefault(); 
+        const houseArray = [ "Gryffindor", "Ravenclaw", "Hufflepuff", "Slytherin",];
+        const calcIndex = houseArray.indexOf(updatedArray.house);
+        console.log("house:", updatedArray.house, "correctIndex:", calcIndex);
+            fetch('http://localhost:4000/questions', {
+            method: 'POST',
+            headers: { 'Content-Type': "application/json" },
+            body: JSON.stringify({
+                question: `What house does ${updatedArray.name} belong to?`,
+                options: [
+                    "Gryffindor",
+                    "Ravenclaw",
+                    "Hufflepuff",
+                    "Slytherin",
+                ],
+                correctIndex: parseInt(calcIndex),
+            })
+        }).then(() => { console.log('new formData added') })
+        
+    }
 
     return (
         <>
             <Button changeIndex={changeIndex} />
             <Box updatedArray={updatedArray} />
+            <AddQuestionButton handleOnClick={handleOnClick} updatedArray={updatedArray} />
         </>
     )
 }
