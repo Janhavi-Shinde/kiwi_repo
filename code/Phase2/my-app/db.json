@@ -32,6 +32,28 @@
       ],
       "correctIndex": 2,
       "id": 3
+    },
+    {
+      "question": "What house does Harry Potter belong to?",
+      "options": [
+        "Gryffindor",
+        "Ravenclaw",
+        "Hufflepuff",
+        "Slytherin"
+      ],
+      "correctIndex": 0,
+      "id": 4
+    },
+    {
+      "question": "What house does Hermione Granger belong to?",
+      "options": [
+        "Gryffindor",
+        "Ravenclaw",
+        "Hufflepuff",
+        "Slytherin"
+      ],
+      "correctIndex": 0,
+      "id": 5
     }
   ]
 }
