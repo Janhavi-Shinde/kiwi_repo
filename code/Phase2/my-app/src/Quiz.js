@@ -1,6 +1,7 @@
 import { React, useEffect, useState } from 'react';
 import ShowList from "./ShowList";
 import AddNew from './AddNew';
+import Play from './Play';
 
 function Quiz() {
     const [questions, setQuestions] = useState(null);
@@ -18,9 +19,10 @@ function Quiz() {
     return (
         <>
             <h2>Quiz Component:</h2>
-            <ShowList questions={questions} />
-            <AddNew />
-
+            {questions && <ShowList questions={questions} /> }
+            {questions && <AddNew questions={questions} /> }
+            {questions && <Play questions={questions} /> }
+            
         </>
 
 

@@ -6,7 +6,7 @@ function ShowList({ questions }) {
 
     const card = questions && questions.map(q => (
         <li key={q.id} >
-            <h3>Question No.{q.id}: {q.question}
+            <h3>Question: {q.question}
                 <ListDeleteButton id={q.id}/></h3>
 
             <label htmlFor="selectAnswers">
