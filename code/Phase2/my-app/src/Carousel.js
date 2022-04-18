@@ -60,6 +60,7 @@ function Carousel({ apiData }) {
 
     return (
         <>
+        <p> Click the 'Next' button to explore the main Hogwarts students! </p>
             <Button changeIndex={changeIndex} />
             <Box updatedArray={updatedArray} />
             <AddQuestionButton handleOnClick={handleOnClick} updatedArray={updatedArray} />

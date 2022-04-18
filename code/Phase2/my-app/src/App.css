@@ -4,4 +4,13 @@
     text-align:center;
 }
 
-
+.links { 
+    background-color: aliceblue;
+    width: fit-content;
+    text-align: center;
+    transform: translate(125%);
+    padding-left: 2em;
+    padding-right: 2em;
+    padding-top: 2em;
+    padding-bottom: 2em;
+}
