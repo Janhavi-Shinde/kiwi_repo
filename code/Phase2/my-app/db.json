@@ -23,17 +23,6 @@
       "correctIndex": 0
     },
     {
-      "question": "Best HP Book?",
-      "options": [
-        "PoA",
-        "HBP",
-        "GoF",
-        "PS"
-      ],
-      "correctIndex": 2,
-      "id": 3
-    },
-    {
       "question": "What house does Harry Potter belong to?",
       "options": [
         "Gryffindor",
@@ -54,6 +43,17 @@
       ],
       "correctIndex": 0,
       "id": 5
+    },
+    {
+      "question": "What house does Draco Malfoy belong to?",
+      "options": [
+        "Gryffindor",
+        "Ravenclaw",
+        "Hufflepuff",
+        "Slytherin"
+      ],
+      "correctIndex": 3,
+      "id": 6
     }
   ]
 }

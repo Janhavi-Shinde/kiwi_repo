@@ -9,10 +9,13 @@ function Play({ questions }) {
 
 const currentQ = questions[questionIndex];
 const arrayLength = questions.length -1 ; // 4
+const [ ternary, setTernary ] = useState(false);
+const [ score, setScore ] = useState(0);
 
 console.log("currentQ's index:", questionIndex); //5 
 
-function handleClick(){
+function handleClick(correctAnswer) {
+    
     if (questionIndex < arrayLength) {
         console.log("questionIndex was:", questionIndex);
         setQuestionIndex(questionIndex + 1);
@@ -21,24 +24,16 @@ function handleClick(){
     } else if (questionIndex === arrayLength) {
          console.log("questionIndex has reached", questionIndex, "out of ", arrayLength);
          setTernary(true);
+        } if (correctAnswer) {
+            setScore(score + 1)
         }
 }
 
-// const ternary = () => (questionIndex === arrayLength); // arrayLength = 2
-// const ternary = questions[-1]
 
-const  [ ternary, setTernary ] = useState(false)
-
-
-const options = currentQ.options.map(option => (
-<button onClick={handleClick} key={option}>{option}</button> ))
-
-const button = <button onClick={handleClick}>Submit</button> 
-
-const startOver = <button onClick={handleStartOver}>Start Over </button>
 function handleStartOver () {
     setQuestionIndex(0);
-    setTernary(false)
+    setTernary(false);
+    setScore(0);
 }
 
 
@@ -46,12 +41,17 @@ function handleStartOver () {
 
         <div className="QuestionCard">
 {ternary? <>
-            <h2> GAME OVER. YOUR SCORE IS: X </h2> 
-            {startOver}
+            <h2> GAME OVER. YOUR SCORE IS: {score} </h2>
+            <button onClick={handleStartOver}>startOver</button> 
+            
             </> 
             :  <div className="QuestionCard">
             <h3> Questions: {currentQ.question} </h3> 
-            {options} {button} 
+            
+            {currentQ.options.map((option, index) => {
+                const correctAnswer = index === currentQ.correctIndex;
+return (<button onClick={() => handleClick(correctAnswer)} key={option}>{option}</button> )})}
+            
         </div>}
             
         </div>
@@ -61,15 +61,3 @@ function handleStartOver () {
 
 export default Play;
 
-
-// {/* <div className="QuestionCard">
-// {currentQ ? <div className="QuestionCard">
-//                 <h3> Questions: {currentQ.question} </h3> 
-//                 {options} {button} 
-//             </div> 
-//             : <>
-//             <h2> GAME OVER. YOUR SCORE IS: X </h2> 
-//             {startOver}
-//             </> }
-            
-//         </div> */}
