@@ -3,9 +3,10 @@ import ShowList from "./ShowList";
 import AddNew from './AddNew';
 import Play from './Play';
 import QuizNavBar from './QuizNavbar';
-// import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Switch, useRouteMatch } from 'react-router-dom';
 
 function Quiz() {
+    let { path } = useRouteMatch();
     const [questions, setQuestions] = useState(null);
     useEffect(
         () => {
@@ -18,29 +19,30 @@ function Quiz() {
 
     return (
         <>
-            {/* // <BrowserRouter>
-            //     <h2>Quiz Component:</h2>
-            //     <QuizNavBar />
-            //     <Switch>
-            //         <Route path="/ShowList">
-            //         {questions && <ShowList questions={questions} />}
-            //         </Route>
 
-            //         <Route  path="/Play">
-            //         {questions && <Play questions={questions} />}
-            //         </Route>
+            <h2>Quiz Component:</h2>
+            <QuizNavBar />
+            <Switch>
+                <Route path={`${path}/Showlist`}>
+                    {questions && <ShowList questions={questions} />}
+                </Route>
 
-            //         <Route  exact path="/AddNew">
-            //         {questions && <AddNew questions={questions} />}
-            //         </Route>
-            //     </Switch>
+                <Route path={`${path}/Play`}>
+                    {questions && <Play questions={questions} />}
+                </Route>
 
-            // </BrowserRouter> */}
-             <QuizNavBar />
+                <Route path={`${path}/AddNew`}>
+                    {questions && <AddNew questions={questions} />}
+                </Route>
+            </Switch>
+
+
+
+            {/* <QuizNavBar />
               {questions && <ShowList questions={questions} />}
               {questions && <Play questions={questions} />}
-              {questions && <AddNew questions={questions} />}
-              </>
+              {questions && <AddNew questions={questions} />} */}
+        </>
     )
 }
 

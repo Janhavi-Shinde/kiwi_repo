@@ -1,15 +1,19 @@
 import React from "react";
+import {Link, useRouteMatch } from "react-router-dom";
+ 
+
 
 
 function QuizNavBar () {
-
+    let { url } = useRouteMatch();
+    console.log("path: ", url);
     return (
         <div id="quizNavbar">
-            <a href='/ShowList'> All questions</a>
+            <Link to={`${url}/ShowList`}> All questions</Link>
                 <br/>
-            <a href= '/AddNew'>Add your own question</a>
+            <Link to= { `${url}/AddNew`}>Add your own question</Link>
                 <br/>
-            <a href="/Play"> Play Quiz</a>
+            <Link to={ `${url}/Play`}> Play Quiz </Link>
 
         </div>
     )
