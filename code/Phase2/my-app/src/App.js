@@ -29,6 +29,7 @@ function App() {
           <Route path="/Carousel">
             {apiData && <Carousel apiData={apiData} />}
           </Route>
+          
           <Route path="/Quiz">
             <Quiz />
           </Route>

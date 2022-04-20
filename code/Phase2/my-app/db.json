@@ -54,6 +54,17 @@
       ],
       "correctIndex": 3,
       "id": 6
+    },
+    {
+      "question": "What house does Ron Weasley belong to?",
+      "options": [
+        "Gryffindor",
+        "Ravenclaw",
+        "Hufflepuff",
+        "Slytherin"
+      ],
+      "correctIndex": 0,
+      "id": 7
     }
   ]
 }

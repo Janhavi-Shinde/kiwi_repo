@@ -5,9 +5,8 @@ import ListDeleteButton from './ListDeleteButton';
 function ShowList({ questions }) {
 
     const card = questions && questions.map(q => (
-        <li key={q.id} >
-            <h3>Question: {q.question}
-                <ListDeleteButton id={q.id}/></h3>
+        <li className="individualQ" key={q.id} >
+            <h3>Question: {q.question} <br/> </h3>
 
             <label htmlFor="selectAnswers">
                 Pick your answer:
@@ -19,6 +18,7 @@ function ShowList({ questions }) {
                     </option>
                 ))}
             </select>
+            <ListDeleteButton id={q.id}/>
         </li>
     ))
     return (

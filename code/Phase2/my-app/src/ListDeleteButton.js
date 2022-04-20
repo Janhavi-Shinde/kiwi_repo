@@ -8,7 +8,7 @@ function ListDeleteButton ({id}){
       }
 
       return (
-      <button onClick={handleDelete}> Delete Question </button>
+      <button id='deleteButton' onClick={handleDelete}> Delete Question </button>
       )
 } 
 
