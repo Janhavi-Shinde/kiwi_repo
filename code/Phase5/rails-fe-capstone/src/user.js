@@ -14,6 +14,28 @@ class User {
         </h3>
       </li>`;
     }
+
+    static findById(id) {
+        return this.all.find(user => user.id === id )
+      }
+
+      renderUpdateForm() {
+        return `
+        <form data-id=${this.id}>
+          <label>Name</label>
+          <p>
+            <input type="text"  value="${this.name}" />
+          </p>
+          <label>Email</label>
+          <p>
+          <textarea>${this.email}</textarea>
+          </p>
+          <button type='submit'>Update User</button>
+        </form>
+      `;
+      }
   }
+
+  
   
   User.all = [];
