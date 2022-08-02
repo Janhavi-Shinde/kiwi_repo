@@ -1,4 +1,11 @@
+// HERE, WE ATTACH OUR EVENT LISTENERS
+
 class App {
+
+    constructor() {
+        this.api = new Api();
+      }
+
     attachEventListeners() {
       document.querySelector('#users-list').addEventListener('click', e => {
         const id = parseInt(e.target.dataset.id);
@@ -17,16 +24,8 @@ class App {
         const email = e.target.querySelector('textarea').value;
   
         const bodyJSON = { name, email };
-        fetch(`http://localhost:3000/users/${user.id}`, {
-          method: 'PATCH',
-          headers: {
-            'Content-Type': 'application/json',
-            Accept: 'application/json',
-          },
-          body: JSON.stringify(bodyJSON),
-        })
-          .then(res => res.json())
-          .then(json => console.log(json));
+        this.api.updateUser(user.id, bodyJSON).then(updatedUser => console.log(updatedUser.name));
+    
       });
     }
   }
