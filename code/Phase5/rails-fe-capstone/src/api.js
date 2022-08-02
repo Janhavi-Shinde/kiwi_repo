@@ -2,21 +2,28 @@
 class Api {
     constructor() {
         this.baseUrl = 'http://localhost:3000';
+        this.headers = {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        };
       }
 
       fetchUsers() {
-        return fetch(`${this.baseUrl}/users`).then(res => res.json());
+        return this.get(`${this.baseUrl}/users`);
       }
     
       updateUser(id, body) {
-        return fetch(`${this.baseUrl}/users/${id}`, {
+        return this.patch(`${this.baseUrl}/users/${id}`, body);
+      }
+      get(url) {
+        return fetch(url).then(res => res.json());
+      }
+    
+      patch(url, body) {
+        return fetch(url, {
           method: 'PATCH',
-          headers: {
-            'Content-Type': 'application/json',
-            Accept: 'application/json',
-          },
+          headers: this.headers,
           body: JSON.stringify(body),
         }).then(res => res.json());
       }
-    
 }
