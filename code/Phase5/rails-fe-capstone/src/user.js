@@ -5,6 +5,11 @@ class User {
       this.email = data.email;
       User.all.push(this);
     }
+
+    update({ name, email }) {
+        this.name = name;
+        this.email = email;
+      }
   
     renderListItem() {
       return `

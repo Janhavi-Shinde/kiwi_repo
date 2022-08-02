@@ -41,7 +41,11 @@ class App {
             const email = e.target.querySelector('textarea').value;
         
             const bodyJSON = { name, email };
-            this.api.updateUser(user.id, bodyJSON).then(updatedUser => console.log(updatedUser.name));
+            this.api.updateUser(user.id, bodyJSON).then(updatedUser => {
+                const user = User.findById(updatedUser.id);
+                user.update(updatedUser);
+                this.addUsers();
+            });
           }
 
           handleEditClick(e) {
