@@ -4,15 +4,9 @@ document.addEventListener('DOMContentLoaded', () => {
       .then(res => res.json())
       .then(json =>
         json.forEach(user => {
-          const data = `
-          <li>
-            <h3>${user.name}
-                <p>${user.email}</p>
-              <button>edit</button>
-            </h3>
-          </li>`;
+          const newUser = new User(user);
   
-          document.querySelector('#users-list').innerHTML += data;
+          document.querySelector('#users-list').innerHTML += newUser.renderListItem();
         })
       );
   });
