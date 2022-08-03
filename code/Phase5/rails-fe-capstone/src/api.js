@@ -15,6 +15,10 @@ class Api {
       updateUser(id, body) {
         return this.patch(`${this.baseUrl}/users/${id}`, body);
       }
+
+      postUsers(body) { 
+        return this.post(`${this.baseUrl}/users`, body);
+      }
       get(url) {
         return fetch(url).then(res => res.json());
       }
@@ -26,4 +30,13 @@ class Api {
           body: JSON.stringify(body),
         }).then(res => res.json());
       }
+
+      post(url, newUserData) { 
+        return fetch(url, {
+          method:'POST',
+          headers: this.headers,
+          body: JSON.stringify(newUserData),
+        }).then(res => res.json());
+        }
+      
 }
