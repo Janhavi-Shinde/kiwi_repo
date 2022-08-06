@@ -65,6 +65,61 @@
       ],
       "correctIndex": 0,
       "id": 7
+    },
+    {
+      "question": "Harry's favourite color",
+      "options": [
+        "red",
+        "green",
+        "yellow",
+        "blue"
+      ],
+      "correctIndex": 0,
+      "id": 8
+    },
+    {
+      "question": "What house does Draco Malfoy belong to?",
+      "options": [
+        "Gryffindor",
+        "Ravenclaw",
+        "Hufflepuff",
+        "Slytherin"
+      ],
+      "correctIndex": 3,
+      "id": 9
+    },
+    {
+      "question": "What house does Cedric Diggory belong to?",
+      "options": [
+        "Gryffindor",
+        "Ravenclaw",
+        "Hufflepuff",
+        "Slytherin"
+      ],
+      "correctIndex": 2,
+      "id": 10
+    },
+    {
+      "question": "What house does Harry Potter belong to?",
+      "options": [
+        "Gryffindor",
+        "Ravenclaw",
+        "Hufflepuff",
+        "Slytherin"
+      ],
+      "correctIndex": 0,
+      "id": 11
+    },
+    {
+      "question": "What house does Hermione Granger belong to?",
+      "options": [
+        "Gryffindor",
+        "Ravenclaw",
+        "Hufflepuff",
+        "Slytherin"
+      ],
+      "correctIndex": 0,
+      "id": 12
     }
   ]
 }

@@ -6,7 +6,7 @@ function ShowList({ questions }) {
 
     const card = questions && questions.map(q => (
         <li className="individualQ" key={q.id} >
-            <h3>Question: {q.question} <br/> </h3>
+            <h3>{q.question} <br/> </h3>
 
             <label htmlFor="selectAnswers">
                 Pick your answer:

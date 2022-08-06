@@ -13,6 +13,7 @@
     padding-right: 2em;
     padding-top: 2em;
     padding-bottom: 2em;
+    border-radius: 100px;
 }
 
 .QCard{
@@ -29,9 +30,10 @@ display: grid;
     list-style-type: none;
     background-color:darkkhaki;
     border-radius: 3px;
-    padding: 21px 20px;
+    padding: 18px 17px;
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 0fr 0.5fr;
+    grid-template-rows: 1fr 0fr 0.5fr 0.5fr;
+    grid-row-gap: 10px;
     grid-template-areas:
         'question'
         'label' 
@@ -42,7 +44,8 @@ display: grid;
 }
 
 .individualQ > h3 {
-    grid-area: question;   
+    grid-area: question; 
+
 }
 
 .individualQ > label {
@@ -53,12 +56,17 @@ display: grid;
 .individualQ > select {
     grid-area: dropdown;
     width: 300px;
+    
 }
 
 
 #deleteButton { 
     grid-area: delete;
-    width: 100px;   
+    width: 100px;
+    color:white;
+    background-color: brown;   
+    border-radius: 25px;
+    transform: translate(100px, 10px);
 }
 
 #quizNavbar { 
@@ -71,4 +79,19 @@ display: grid;
     padding-right: 2em;
     padding-top: 2em;
     padding-bottom: 2em;
+    border-radius: 100px;
+
+}
+.homePage > ul {
+    list-style-type: none;
+}
+
+.answerButton > button {
+    background-color: aliceblue;
+    color:darkblue;
+    border-radius: 25px;
+}
+.answerButton {
+    line-height: 30px;
+    list-style-type: none;
 }
